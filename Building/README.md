@@ -1,6 +1,6 @@
 # FunkyFrog OS Compilation Guide
 
-This guide documents the process of compiling the FunkyFrog OS image. It is based on the FunKeyOS by DrUm78 [FunKey-OS](https://github.com/DrUm78/FunKey-OS) but includes specific modifications for the larger 320x240 display and custom hardware adjustments as well as some cosmetic changes due to the change of resolution/aspect ratio.
+This guide documents the process of compiling the FunkyFrog OS image for the so called FunKey-SP. It is based on the FunKeyOS by DrUm78 [FunKey-OS](https://github.com/DrUm78/FunKey-OS) but includes specific modifications for the larger 320x240 display and custom hardware adjustments as well as some cosmetic changes due to the change of resolution/aspect ratio. It is modified from DynaMight1124's original FunkyFrog OS to correct for a 180 degree rotated screen and inverted colors. These fixes are in `fb_st7789v.c` of `fbtft-drivers.zip`
 
 **Note:** This guide uses a direct modification method (replacing files in the build directory) rather than a full clean environment setup. This is not the proper way to do things, its a little hacky but is quicker to setup for such a niche device.
 
@@ -20,6 +20,8 @@ The first step is updating the video drivers and device tree to support the 320x
 ### Video Driver (fbtft)
 
 We need to replace the driver files and force a recompile.
+
+`fb_st7789v.c` is the only file modified from DynaMight1124's FunkyFrog package.
 
 1.  **Locate the directories:**
       * `FunKey-OS/Recovery/output/build/linux-custom/drivers/staging/fbtft/`
